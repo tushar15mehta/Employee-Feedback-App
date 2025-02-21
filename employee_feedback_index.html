@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Feedback Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <h1>Employee Feedback System</h1>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('feedback')">Submit Feedback</a></li>
+            <li><a href="#" onclick="showPage('dashboard')">View Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div id="home" class="page active">
+        <h2>Welcome to the Employee Feedback System</h2>
+        <p>Help us improve workplace culture by sharing your experience.</p>
+        <button onclick="showPage('feedback')" class="primary-btn">Give Feedback</button>
+    </div>
+
+    <div id="feedback" class="page">
+        <h2>Submit Your Feedback</h2>
+        <form id="feedbackForm">
+            <label for="name">Name (Optional for Anonymity):</label>
+            <input type="text" id="name">
+
+            <label for="email">Email (Optional):</label>
+            <input type="email" id="email">
+
+            <label for="sentiment">How do you feel today?</label>
+            <select id="sentiment">
+                <option value="😊 Happy">😊 Happy</option>
+                <option value="😐 Neutral">😐 Neutral</option>
+                <option value="😞 Unhappy">😞 Unhappy</option>
+            </select>
+
+            <label for="category">Feedback Category:</label>
+            <select id="category">
+                <option value="Workload">Workload</option>
+                <option value="Leadership">Leadership</option>
+                <option value="Work Environment">Work Environment</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="Mental Well-being">Mental Well-being</option>
+            </select>
+
+            <label for="message">Your Feedback:</label>
+            <textarea id="message" required></textarea>
+
+            <label for="rating">Rate Your Experience (1-5):</label>
+            <input type="number" id="rating" min="1" max="5" required>
+
+            <button type="submit" class="primary-btn">Submit</button>
+        </form>
+    </div>
+
+    <div id="dashboard" class="page">
+        <h2>Employee Feedback Dashboard</h2>
+        <p>View feedback insights from employees.</p>
+        <ul id="feedbackList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
